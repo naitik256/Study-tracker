@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Choose a subject for your selected class and start your study plan.">
+  <title>Select Subject - Study Success Planner</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    window.onload = () => {
+      const cls = getQueryParam('class');
+      if (!cls) window.location.href = "index.html";
+
+      document.getElementById("heading").textContent = `Select Subject - Class ${cls}`;
+      const buttons = document.querySelectorAll(".btn");
+      buttons.forEach(btn => {
+        const subject = btn.getAttribute("data-subject");
+        btn.href = `planner.html?class=${cls}&subject=${subject}`;
+      });
+    };
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1 id="heading">Select Subject</h1>
+    <div class="class-buttons">
+      <a data-subject="Physics" class="btn">Physics</a>
+      <a data-subject="Chemistry" class="btn">Chemistry</a>
+      <a data-subject="Biology" class="btn">Biology</a>
+      <a data-subject="Math" class="btn">Math</a>
+    </div>
+    <a href="index.html" class="back-btn">⬅ Back</a>
+  </div>
+</body>
+</html>
