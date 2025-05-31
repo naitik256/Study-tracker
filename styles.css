@@ -1,44 +1,49 @@
+:root {
+  color-scheme: dark light;
+  --bg: #121212;
+  --text: #f0f0f0;
+  --primary: #00bcd4;
+  --card: #1e1e1e;
+  --shadow: rgba(0,0,0,0.5);
+}
+
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: #f0f2f5;
-  color: #333;
+  background: var(--bg);
+  color: var(--text);
 }
 
 .container {
+  max-width: 900px;
+  margin: auto;
   padding: 20px;
   text-align: center;
 }
 
-h1, h2 {
-  margin-bottom: 20px;
+h1 {
+  margin-bottom: 10px;
 }
 
-.class-buttons, .subject-buttons {
+.class-buttons {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
   justify-content: center;
+  gap: 20px;
 }
 
-button {
+.btn, .back-btn {
+  background: var(--primary);
+  color: #fff;
+  text-decoration: none;
   padding: 15px 30px;
-  font-size: 16px;
-  border: none;
   border-radius: 8px;
-  cursor: pointer;
-  background-color: #007bff;
-  color: white;
-  transition: background-color 0.3s ease;
+  font-size: 16px;
+  transition: background 0.3s ease;
 }
 
-button:hover {
-  background-color: #0056b3;
-}
-
-.back {
-  margin-top: 20px;
-  background-color: #6c757d;
+.btn:hover, .back-btn:hover {
+  background: #0097a7;
 }
 
 .table-container {
@@ -49,28 +54,22 @@ button:hover {
 table {
   width: 100%;
   border-collapse: collapse;
-  background-color: white;
+  background: var(--card);
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px var(--shadow);
 }
 
 th, td {
-  padding: 12px 15px;
-  border-bottom: 1px solid #ddd;
-  text-align: center;
+  padding: 10px;
+  border-bottom: 1px solid #333;
 }
 
 tr:nth-child(even) {
-  background-color: #f9f9f9;
+  background-color: #1a1a1a;
 }
 
-.toggle-cell {
+.toggle {
   cursor: pointer;
   font-size: 20px;
-  transition: transform 0.2s ease;
-}
-
-.toggle-cell:hover {
-  transform: scale(1.2);
 }
