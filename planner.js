@@ -22,7 +22,6 @@ const subject = getParam('subject');
 if (!cls || !subject) window.location.href = "index.html";
 
 document.getElementById("title").textContent = `Planner - Class ${cls} ${subject}`;
-
 const chapters = dataMap[cls][subject];
 const tbody = document.getElementById("planner-body");
 
