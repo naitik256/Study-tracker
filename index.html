@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Study Success Planner</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container" id="home-screen">
+    <h1>Study Success Planner</h1>
+    <div class="class-buttons">
+      <button onclick="selectClass('11')">Class 11</button>
+      <button onclick="selectClass('12')">Class 12</button>
+    </div>
+  </div>
+
+  <div class="container" id="subject-screen" style="display:none;">
+    <h2>Select Subject - Class <span id="selected-class"></span></h2>
+    <div class="subject-buttons">
+      <button onclick="selectSubject('Physics')">Physics</button>
+      <button onclick="selectSubject('Chemistry')">Chemistry</button>
+      <button onclick="selectSubject('Biology')">Biology</button>
+      <button onclick="selectSubject('Math')">Math</button>
+    </div>
+    <button class="back" onclick="goBackToClass()">⬅ Back</button>
+  </div>
+
+  <div class="container" id="planner-screen" style="display:none;">
+    <h2 id="planner-title">Planner</h2>
+    <div class="table-container">
+      <table id="planner-table">
+        <thead>
+          <tr>
+            <th>Chapter</th>
+            <th>Lecture</th>
+            <th>Notes</th>
+            <th>PYQs</th>
+            <th>DPP</th>
+            <th>Test-1</th>
+            <th>Test-2</th>
+            <th>Rev-1</th>
+            <th>Rev-2</th>
+            <th>Rev-3</th>
+            <th>Rev-4</th>
+            <th>Short Notes</th>
+          </tr>
+        </thead>
+        <tbody id="planner-body"></tbody>
+      </table>
+    </div>
+    <button class="back" onclick="goBackToSubjects()">⬅ Back</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
